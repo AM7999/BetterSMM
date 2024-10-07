@@ -14,12 +14,6 @@ import requests
 import json
 import os
 
-# class config:
-#     pathToSatisfactory = ""
-#     # This is an un-inclusive variable to be used for the modsInstalled array
-#     modsInstalled = 0
-#     modsInstalledArray = []
-
 
 def findFile(filename):
     for root, dirs, files in os.walk("%USERPROFILE%\\AppData\\Local\\SMM-py"):
