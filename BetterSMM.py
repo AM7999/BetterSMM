@@ -24,6 +24,9 @@ def findFile(filename):
 
 url = "https://api.ficsit.app/v1"
 
+configLocation = ".\\exampleconfig.json"
+
+# The main frame, where all the options are
 class mainFrame(Frame):
     def __init__(self, screen):
         super(mainFrame, self).__init__(screen,
@@ -53,8 +56,9 @@ class mainFrame(Frame):
         if selected == 0:
             raise StopApplication("User requested exit")
 
+# creating an object so i can display stuff in the Settings frame easier
 settingsData = {
-    
+    "DENVINST": 
 }
 
 # class settingsFrame(Frame):
