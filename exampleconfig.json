@@ -1,0 +1,40 @@
+{
+    "installPath": "C:\\Program Files\\SatisfactoryEarlyAccess",
+    "gameStorefront": "epic_games",
+    "devEnvInstalled": true, 
+    "devEnv": [
+        {
+            "devEnvName": "SML-U8",
+            "devEnvPath": "D:\\Development\\UnrealEngine\\SML-U8\\FactoryGame.uproject"
+        }
+    ],
+    "profiles": [
+        {
+            "profileName": "Modded",
+            "modsInstalledInt": 1,
+            "modsInstalled": [ 
+                {
+                    "ModName": "exampleMod",
+                    "ModVersion": 1.0,
+                    "InstalledTo": "C:\\Program Files\\SatisfactoryEarlyAccess\\FactoryGame\\Mods\\examplemod\\examplemod.uplugin"
+                }
+            ]
+        },
+        {
+            "profileName": "Development",
+            "modsInstalledInt": 2,
+            "modsInstalled": [
+                {
+                    "ModName": "testmod",
+                    "ModVersion": 1.0,
+                    "InstalledTo": "C:\\Program Files\\SatisfactoryEarlyAccess\\FactoryGame\\Mods\\testmod\\testmod.uplugin"
+                },
+                {
+                    "ModName": "testCassettes",
+                    "ModVersion": 1.9,
+                    "InstalledTo": "C:\\Program Files\\SatisfactoryEarlyAccess\\FactoryGame\\Mods\\moreCassettes\\moreCassettes.uplugin"
+                }
+            ]
+        }
+    ]
+}
