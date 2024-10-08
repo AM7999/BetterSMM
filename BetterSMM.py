@@ -24,7 +24,8 @@ def findFile(filename):
 
 url = "https://api.ficsit.app/v1"
 
-configLocation = ".\\exampleconfig.json"
+# configLocation = ".\\exampleconfig.json"
+# config = json.loads(configLocation)
 
 # The main frame, where all the options are
 class mainFrame(Frame):
@@ -44,7 +45,7 @@ class mainFrame(Frame):
         self.fix()
     
     def _quit(self):
-        self.__scene.add_effect(
+        self.scene.add_effect(
             PopUpDialog(self.screen,
             ["Yes", "No"],
             has_shadow=True,
@@ -57,18 +58,36 @@ class mainFrame(Frame):
             raise StopApplication("User requested exit")
 
 # creating an object so i can display stuff in the Settings frame easier
-settingsData = {
-    "DENVINST": 
-}
+# settingsData = {
+#     "DENVINST": config['devEnvInstalled'],
+# }
 
-# class settingsFrame(Frame):
-#     def __init__(self, screen):
-#         super(settingsFrame, self).__init__(screen,
-#                                             int(screen.height * 2 // 3),
-#                                             int(screen.width * 2 // 3),
-#                                             )
+class settingsFrame(Frame):
+    def __init__(self, screen):
+        super(settingsFrame, self).__init__(screen,
+                                            int(screen.height * 2 // 3),
+                                            int(screen.width * 2 // 3),
+                                            #data=settingsData,
+                                            has_shadow=True,
+                                            title="Satisfactory Mod Manager: Settings")
+        layout = Layout([1, 18, 1])
+        self.add_layout(layout)
+        layout.add_widget(RadioButtons([("IsDevEnvInstalled", 1)],
+                                       label="test",
+                                       name="DENVINST",
+                                       on_change=self._on_change), 1)
+        self.fix()
 
+        def _on_change(self):
+            changed = False
+            self.save()
+            for key, value in self.data.items():
+                if key not in settingsData or settingsData[key] != value:
+                    changed = True
+                break
+            self._reset_button.disabled = not changed
 
+# the main function, this is actually what creates the frame for viewing
 def main(screen, scene):
     screen.play([Scene([
         Background(screen),
